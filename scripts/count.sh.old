@@ -1,0 +1,19 @@
+test_dir="$HOME/OWD/owd_test_cases/tests"
+
+dir_arr=`ls -l $test_dir | grep "^d"  | awk '{print $9}'`
+
+dir_arr=${dir_arr[@]/OTHER_FEATURES/}
+dir_arr=${dir_arr[@]/_mock_data/}
+dir_arr=${dir_arr[@]/_resources/}
+
+CSV_FILE="coverage.csv"
+if [ ! -f $CSV_FILE ]
+then
+	printf "SUITE, TESTS, DATE\n" | tee -a $CSV_FILE
+fi
+
+for dir in $dir_arr;
+do
+	num=`ls ${test_dir}/${dir}/ | grep ".*.py" | wc -l`
+	printf "%s, %s, %s\n" $dir $num $(date '+%d/%m') | tee -a $CSV_FILE
+done

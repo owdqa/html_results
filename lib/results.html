@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Summary view</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+		<script src="lib/jquery.csv-0.71.min.js"></script>
+		<script src="lib/jquery.tablesorter.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/results.css">
+		<link rel="stylesheet" type="text/css" href="css/buttons.css">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css">
+
+		<script src="js/results_total.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    $.ajax({
+			        type: "GET",
+			        url: "total_weekly.csv",
+			        dataType: "text",
+			        success: function(data) {
+			        	results_total.processData(data);
+			        },
+			        error : function() {
+			        	results_total.handleError();
+			        }
+			    });
+			});
+		</script>
+	</head>
+	<body>
+		<div id="headerContainer">
+			<div id="header">
+				<div class="logo-firefox"></div>
+				<div class="title">Telefónica QA Team</div>
+				<div class="logo-movistar"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="main-title">Summary Results</div>
+		<div id="prev-info" class="summary">
+			<div class="info-wrapper">
+			</div>
+		</div>
+	</body>
+</html>
