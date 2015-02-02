@@ -9,11 +9,75 @@ body {
 	color: #fff;
 }
 
-form {
+#main-header {
+	height: 80px;
+	display: flex;
+	list-style: outside none none;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#main-header .logo-firefox {
+	height: 52px;
+	width: 164px;
+	background: url("../resources/firefoxos-title.png") no-repeat;
+}
+
+#main-header .logo-movistar {
+	height: 52px;
+	width: 152px;
+	background: url("../resources/logo_telefonica_153x52.png") no-repeat;
+}
+
+#main-header .title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#main-content  {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 3em;
+}
+
+.left-image {
+	height: 409px;
+	width: 361px;
+	background: url("../resources/ilustracion-zorro-1.png") no-repeat;
+	z-index: 1;
+}
+
+.right-image {
+	background: url("../resources/quality.png");
+	width: 300px;
+	height: 270px;
+}
+
+.form-wrapper {
+	width: 28%;
+}
+.pre-form {
+	text-align: center;
+}
+
+.pre-form .form-title{
+	display: inline;
 	position: relative;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
 	z-index: 2;
-	width: 25%;
-	margin: 0 auto;
+}
+
+.pre-form .form-actions {
+	margin-left: 2em;
+	display: inline;
+}
+
+#form-device-version-selection {
+	text-align: center;
+	z-index: 2;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
@@ -31,84 +95,10 @@ form {
 	background: linear-gradient(top, #00527e, #6fc3db 100%);
 }
 
-#headerContainer {
-	width: 100%;
-	/*position:fixed;
-    top:0px;*/
+#device-select {
+	margin-right: 6em;
 }
 
-#header {
-	height: 80px;
-	margin:0px auto;
-}
-
-#header .logo-firefox {
-	height: 52px;
-	width: 164px;
-	background: url("../resources/firefoxos-title.png") no-repeat;
-	float: left;
-}
-
-#header .logo-movistar {
-	height: 52px;
-	width: 152px;
-	float: right;
-	background: url("../resources/logo_telefonica_153x52.png") no-repeat;
-}
-
-#header .title {
-	font-size: 30px;
-	font-weight: bold;
-	float: left;
-	margin-left: 25%;
-	margin-right: 20%;
-	margin-top: 1%;
-}
-
-.clear {
-	clear: both;
-}
-
-.left-image {
-	position: fixed;
-	top: 20%;
-	left: 5%;
-
-	height: 571px;
-	width: 504px;
-
-	background: url("../resources/ilustracion-zorro-1.png") no-repeat;
-
-	z-index: 1;
-}
-
-.right-image {
-	position: fixed;
-	top: 20%;
-	right: 6%;
-
-	background: url("../resources/quality.png");
-
-	width: 300px;
-	height: 270px;
-}
-
-.pre-form {
-	text-align: center;
-	margin-top: 6em;
-}
-
-.pre-form .form-title{
-	display: inline;
-	position: relative;
-	text-align: center;
-	font-size: 25px;
-	font-weight: bold;
-	z-index: 2;
-	margin-top: 6em;
-}
-
-.pre-form .form-actions {
-	margin-left: 2em;
-	display: inline;
+menu button, menu input[type=reset] {
+	margin: 0.5em;
 }

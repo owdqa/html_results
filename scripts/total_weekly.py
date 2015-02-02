@@ -5,20 +5,20 @@ from CSVParser import *
 ROWS_TO_JUMP = 1
 
 # It is necessary to specify the labels of our CSS so that it can be processed right
-labels = ["START_TIME","DATE","TEST_SUITE","TEST_CASES_PASSED",
-          "FAILURES","AUTOMATION_FAILURES","UNEX_PASSES","KNOWN_BUGS","EX_PASSES",
-          "IGNORED","UNWRITTEN","PERCENT_FAILED","DEVICE","VERSION","BUILD","TEST_DETAILS"]
+labels = ["START_TIME", "DATE", "TEST_SUITE", "TEST_CASES_PASSED", 
+          "FAILURES", "AUTOMATION_FAILURES", "UNEX_PASSES", "KNOWN_BUGS", "EX_PASSES", 
+          "IGNORED", "UNWRITTEN", "PERCENT_FAILED", "DEVICE", "VERSION", "BUILD", "TEST_DETAILS"]
 
 # CSV file to be processed
 file = 'total_csv_file.csv'
 
-# We just have to call to our super parser, stating the file, the labels, and the rows
+# We just have to call to our super parser,  stating the file,  the labels,  and the rows
 # to be skipped
 parser = CSVParser(file, labels, ROWS_TO_JUMP)
 
 # FILTER PROCESS: This labels are gonna be the ones to the new file
-filterLabels = ["DATE","TEST_SUITE","TEST_CASES_PASSED","PERCENT_FAILED",
-                "DEVICE","VERSION","BUILD","TEST_DETAILS"]
+filterLabels = ["DATE", "TEST_SUITE", "TEST_CASES_PASSED", "KNOWN_BUGS", "PERCENT_FAILED", 
+                "DEVICE", "VERSION", "BUILD", "TEST_DETAILS"]
 parser.filterColumns(filterLabels)
 
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<title>CITestingResults</title>
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link href="css/buttons.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	</head>
+	<body>
+		<header id="main-header">
+			<div class="logo-firefox header-element"></div>
+			<div class="title header-element">Telefónica QA Team</div>
+			<div class="logo-movistar header-element"></div>
+		</header>
+		<section id="main-content">
+			<div class="left-image"></div>
+			<div class="form-wrapper">
+				<div class="pre-form">
+					<div class="form-title">CI Testing Results</div>
+					<div class="form-actions">
+						<button id="generate-results" style="margin-top: -0.5em;">Summary view</button>
+					</div>
+				</div>
+				<div id="form-device-version-selection">
+					<section>
+						<h2 class="form-title">Choose an option</h2>
+						<label for="device-select">Device</label>
+						<select id="device-select">
+							<option value="unagi">unagi</option>
+							<option value="hamachi_light">Hamachi light</option>
+							<option value="hamachi-ICS">Hamachi ICS</option>
+							<option value="flame-JB">Flame JB </option>		
+							<option value="flame-KK" selected>Flame KK </option>
+							<option value="certification">Certificacion</option>
+						</select>
+						<label for="version-select">Version</label>
+						<select id="version-select">
+							<option value="v1.2">v1.2</option>
+							<option value="v1.3">v1.3</option>
+							<option value="v1.4">v1.4</option>
+							<option value="v2.0">v2.0</option>
+							<option value="v2.1" selected>v2.1</option>
+						</select>
+					</section>
+					<menu>
+						<button id="show-results">Show</button>
+						<input id="reset" value="Reset" type="reset">
+					</menu>
+				</div>
+			</div>
+			<div class="right-image"></div>
+		</section>
+	</body>
+	<script src="js/index.js"></script>
+</html>

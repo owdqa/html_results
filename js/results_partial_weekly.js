@@ -4,8 +4,8 @@ var results_partial_weekly = (function Results() {
 
 	var DATE_COLUMN = 0;
 	var TEST_PASSED_COLUMN = 2;
-	var PERCENT_FAILED_COLUMN = 3;
-	var LINK_COLUMN = 5;
+	var PERCENT_FAILED_COLUMN = 4;
+	var LINK_COLUMN = 6;
 
 
 	function handleError() {

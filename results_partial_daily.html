@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Daily Results</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+		<script src="../../lib/jquery.csv-0.71.min.js"></script>
+		<script src="../../lib/jquery.tablesorter.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../../css/results.css">
+		<link rel="stylesheet" type="text/css" href="../../css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../../css/buttons.css">
+
+		<script src="../../js/results_partial_daily.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    $.ajax({
+			        type: "GET",
+			        url: "partial_daily.csv",
+			        dataType: "text",
+			        success: function(data) {
+			        	results_partial_daily.processData(data);
+			        },
+			        error : function() {
+			        	results_partial_daily.handleError();
+			        }
+			    });
+
+			    $(".more-info-button").on("click", function() {
+			    	var url = location.href.split("/").slice(0,-1).join("/")
+			    	url += "/results_partial_weekly.html"
+			    	window.open(url);
+			    });
+			});
+		</script>
+	</head>
+	<body>
+		<div id="headerContainer">
+			<div id="header">
+				<div class="logo-firefox"></div>
+				<div class="title">Telefónica QA Team</div>
+				<div class="logo-movistar"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="main-title">Daily Results</div>
+		<div class="sub-title">(only test suites with unexpected failures (New bugs))</div>
+		<div id="prev-info" class="daily left">
+			<div class="info-wrapper">
+			</div>
+		</div>
+		<div id="more-info" class="left">
+			<input class="more-info-button" value="Results History" type="button">
+		</div>
+		<div class="clear"></div>
+	</body>
+</html>

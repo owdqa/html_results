@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QA Automation Test Coverage</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+	
+	<script src="lib/jquery-2.0.3.min.js"></script>
+	<script src="lib/jquery.csv-0.71.min.js"></script>
+	<script src="lib/globalize.min.js"></script>
+	<script src="lib/dx.chartjs.js"></script>
+	
+	<script type="text/javascript" src="js/chart.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    $.ajax({
+		        type: "GET",
+		        url: "coverage_certification.csv",
+		        dataType: "text",
+		        success: function(data) {
+		        	chart.processData(data);
+		        },
+		        error : function() {
+		        	chart.handleError();
+		        }
+		    });
+
+		    $("#dateSelector").on("change", function () {
+		    	chart.getPicture(this.value);
+		    });
+		});
+
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="css/coverage.css">
+</head>
+<body>
+	<div id="headerContainer">
+		<div id="header">
+			<div class="logo-firefox"></div>
+			<div class="title">Telefónica QA Team</div>
+			<div class="logo-movistar"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="mainContainer">
+		<div class="mainTitle">COVERAGE STATISTICS</div>
+		<div id="chartContainer">
+			<div class="graph">
+    			<div id="trainChart" style="max-width:95%; height: 800px;"></div>
+			</div>
+			<div class="graph">
+    			<span style="margin-right: 0.5em; color: #AFABAB;"> Date: </span><select id="dateSelector"></select>
+		    	<div id="barChart" style="max-width:95%; height: 560px; margin-top: 4em;"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
