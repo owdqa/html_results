@@ -95,6 +95,10 @@ body {
 	background: linear-gradient(top, #00527e, #6fc3db 100%);
 }
 
+#device-select, #version-select {
+	height: 30px;
+}
+
 #device-select {
 	margin-right: 6em;
 }

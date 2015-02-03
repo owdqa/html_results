@@ -55,16 +55,22 @@ table a:visited {
 .main-title {
 	font-size: 30px;
 	font-weight: bold;
-	margin-left: 41.2%;
+	text-align: center;
 }
 
 .sub-title {
 	font-weight: bold;
-	margin-left: 33%;
+	text-align: center
 }
 
+#prev-info {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 2em;
+}
 
-#prev-info.daily{
+/*#prev-info.daily{
 	width: 30%;
 	margin-left: 34%;
 	margin-top: 1em;
@@ -80,7 +86,7 @@ table a:visited {
 	width: 15%;
 	margin-left: 42.2%;
 	margin-top: 1em;
-}
+}*/
 
 #prev-info .info-wrapper {
 	border: 1px solid white;
@@ -88,7 +94,8 @@ table a:visited {
 }
 
 #more-info {
-	margin-top: 1em;
+	display: flex;
+	align-self: center;
 	margin-left: 1em;
 }
 
@@ -124,8 +131,6 @@ table a:visited {
 .orange {
 	color: rgb(215, 98, 10);
 }
-
-
 
 th.header{
     background: url("../resources/table/bg.gif") no-repeat right; 
